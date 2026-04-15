@@ -1,0 +1,35 @@
+.blink {
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.cursor-trail {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: hotpink;
+    z-index: 9999;
+}
+
+.guestbook {
+    background: white;
+    border: 3px solid purple;
+    padding: 20px;
+    margin: 20px;
+    max-width: 400px;
+}
+
+.guestbook h2 {
+    color: purple;
+    font-family: Comic Sans MS, cursive;
+}
+
+.guestbook-entry {
+    border-bottom: 1px dashed gray;
+    padding: 8px 0;
+    font-family: Comic Sans MS, cursive;
+}
