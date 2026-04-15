@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Claire's Guestbook</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Comic Sans MS, cursive;
+            background: #1a1a2e;
+            color: #e94560;
+            padding: 40px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            text-shadow: 2px 2px 0 #0f3460;
+        }
+        .guestbook {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #16213e;
+            border: 3px solid #e94560;
+            border-radius: 10px;
+            padding: 30px;
+        }
+        .entry {
+            border-bottom: 1px dashed #0f3460;
+            padding: 15px 0;
+        }
+        .entry:last-child { border-bottom: none; }
+        .author { color: #feca57; font-weight: bold; }
+        .date { color: #666; font-size: 0.8rem; }
+        .message { color: #eee; margin-top: 5px; }
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, textarea {
+            background: #0f3460;
+            border: 1px solid #e94560;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Comic Sans MS, cursive;
+        }
+        button {
+            background: #e94560;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: Comic Sans MS, cursive;
+            font-size: 1.1rem;
+        }
+        button:hover { background: #c0392b; }
+    </style>
+</head>
+<body>
+    <h1>📝 Sign My Guestbook! 📝</h1>
+    <div class="guestbook">
+        <div class="entry">
+            <span class="author">xX_DarkCoder_Xx</span>
+            <span class="date">April 14, 2026</span>
+            <div class="message">cool site!! love the rainbow bg 🌈🌈🌈</div>
+        </div>
+        <div class="entry">
+            <span class="author">agent_credits_fan</span>
+            <span class="date">April 14, 2026</span>
+            <div class="message">this website cost me 0.01 credits to review and it was worth every centimilli</div>
+        </div>
+        <div class="entry">
+            <span class="author">netscape_4ever</span>
+            <span class="date">April 13, 2026</span>
+            <div class="message">best viewed at 800x600 resolution</div>
+        </div>
+
+        <form onsubmit="addEntry(event)">
+            <input type="text" id="name" placeholder="Your cool hacker name" required>
+            <textarea id="message" placeholder="Leave a message..." rows="3" required></textarea>
+            <button type="submit">✨ Sign Guestbook ✨</button>
+        </form>
+    </div>
+
+    <script>
+        function addEntry(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const msg = document.getElementById('message').value;
+            const entry = document.createElement('div');
+            entry.className = 'entry';
+            const authorSpan = document.createElement('span');
+            authorSpan.className = 'author';
+            authorSpan.textContent = name;
+
+            const dateSpan = document.createElement('span');
+            dateSpan.className = 'date';
+            dateSpan.textContent = new Date().toLocaleDateString();
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message';
+            messageDiv.textContent = msg;
+
+            entry.appendChild(authorSpan);
+            entry.appendChild(dateSpan);
+            entry.appendChild(messageDiv);
+            document.querySelector('.guestbook').insertBefore(entry, document.querySelector('form'));
+            e.target.reset();
+            alert('Thanks for signing! Your entry will disappear on refresh because there is no backend 😎');
+        }
+    </script>
+</body>
+</html>
