@@ -92,11 +92,21 @@
             const msg = document.getElementById('message').value;
             const entry = document.createElement('div');
             entry.className = 'entry';
-            entry.innerHTML = `
-                <span class="author">${name}</span>
-                <span class="date">${new Date().toLocaleDateString()}</span>
-                <div class="message">${msg}</div>
-            `;
+            const authorSpan = document.createElement('span');
+            authorSpan.className = 'author';
+            authorSpan.textContent = name;
+
+            const dateSpan = document.createElement('span');
+            dateSpan.className = 'date';
+            dateSpan.textContent = new Date().toLocaleDateString();
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message';
+            messageDiv.textContent = msg;
+
+            entry.appendChild(authorSpan);
+            entry.appendChild(dateSpan);
+            entry.appendChild(messageDiv);
             document.querySelector('.guestbook').insertBefore(entry, document.querySelector('form'));
             e.target.reset();
             alert('Thanks for signing! Your entry will disappear on refresh because there is no backend 😎');
