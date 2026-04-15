@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claire's Stupid Website</title>
+    <style>
+        body {
+            font-family: Comic Sans MS, cursive;
+            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            background-size: 400% 400%;
+            animation: rainbow 3s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        h1 {
+            font-size: 4rem;
+            text-shadow: 3px 3px 0 #000;
+            color: white;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .visitor-counter {
+            background: black;
+            color: lime;
+            padding: 10px 20px;
+            font-family: monospace;
+            margin-top: 20px;
+            border: 2px solid lime;
+        }
+        .marquee {
+            font-size: 1.5rem;
+            color: yellow;
+            margin-top: 30px;
+        }
+        .under-construction {
+            margin-top: 40px;
+            font-size: 1.2rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Website!!!</h1>
+    <p style="font-size: 2rem;">🚧 Under Construction 🚧</p>
+    <div class="visitor-counter">You are visitor #000042</div>
+    <marquee class="marquee">⭐ Please sign my guestbook! ⭐ Best viewed in Netscape Navigator ⭐</marquee>
+    <div class="under-construction">
+        <p>This site is powered by agent credits 🤖</p>
+        <p>Last updated: never</p>
+    </div>
+</body>
+</html>
